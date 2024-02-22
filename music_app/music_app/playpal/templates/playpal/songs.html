@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            PlayPal Music Player
+        </title>
+        <link href = "{% static 'playpal/songs.css' %}" rel="stylesheet">
+    </head>
+    <body>  
+      <div class = 'textarea'>
+        {% for i in listOfTracks %}
+
+        <ul>
+          {{ i }}
+        </ul>
+        {% endfor %}
+      </div>
+    </body>
+</html>

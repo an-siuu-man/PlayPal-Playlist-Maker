@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayPal</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'playpal/style.css' %}">
+  <img class="logo" src="{% static 'playpal/PlayPal-1.png' %}" alt="play pal logo" width="200" height="200">
+</head>
+
+<body>
+  <div class="paragraph">
+    <p>
+      Welcome to PlayPal, your personal DJ.
+      PlayPal will provide the perfect playlist for you and it requires no login information from you!
+      Query any song released between 2000 and 2023 with just one click!
+    </p>
+    <p>To start you may
+      fill the boxes below with your preferences and hit CREATE!
+    </p>
+  </div>
+
+
+      <form action="{% url 'songs' %}" method= "post">
+        {% csrf_token %}
+        {{form}}
+        <div class = "buttons-container">
+          <input type="submit" class="button-arounder" value="CREATE!">
+        </div>
+      </form>
+</body>
+</html>
